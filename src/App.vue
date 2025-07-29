@@ -4,16 +4,27 @@ import Navbar from '@/components/Navbar.vue'
 </script>
 
 <template>
-  <Navbar />
+  <header>
+    <Navbar />
+  </header>
   <main>
     <RouterView />
   </main>
 </template>
 
 <style>
-/* Optional: Tambahkan style global di sini jika perlu */
+/* Style global Anda */
 body {
-  background-color: #212529; /* Warna background dark-mode Bootstrap */
-  color: #f8f9fa; /* Warna teks light Bootstrap */
+  background-color: #212529;
+  color: #f8f9fa;
+}
+
+.title-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 48px;
 }
 </style>
