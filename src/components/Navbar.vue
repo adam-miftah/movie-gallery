@@ -27,8 +27,21 @@ onUnmounted(() => {
 <template>
   <nav class="navbar navbar-expand-lg fixed-top" :class="{ 'scrolled-nav': isScrolled }">
     <div class="container-fluid">
-      <RouterLink class="navbar-brand fs-4 fw-bold" to="/">AdamMovie</RouterLink>
-
+      <RouterLink class="navbar-brand fs-4 fw-bold d-flex align-items-center" to="/">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="30"
+          height="30"
+          fill="currentColor"
+          class="bi bi-film me-2"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zm-2 3H1v2h2zm2 3H1v2h2zM15 1v2h-2V1zm-2 3h2v2h-2zm2 3h2v2h-2zm-2 3h2v2h-2z"
+          />
+        </svg>
+        <span>AdamMovie</span>
+      </RouterLink>
       <button
         class="navbar-toggler"
         type="button"
@@ -57,7 +70,6 @@ onUnmounted(() => {
     </div>
   </nav>
 </template>
-
 <style scoped>
 /* State awal navbar: transparan */
 .navbar {
