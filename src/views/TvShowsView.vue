@@ -38,7 +38,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="container-fluid py-5 px-4">
+  <div class="container-fluid py-5 px-4 mt-5">
     <h1 class="display-4 fw-bold text-center mb-5">Popular TV Shows</h1>
 
     <Spinner v-if="isLoading" />

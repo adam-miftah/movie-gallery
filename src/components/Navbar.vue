@@ -1,20 +1,13 @@
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
-import { RouterLink } from 'vue-router'
+import { ref, onMounted, onUnmounted, watch } from 'vue'
+import { RouterLink, useRoute } from 'vue-router'
 
-// State untuk melacak posisi scroll
+// --- LOGIKA UNTUK EFEK SCROLL ---
 const isScrolled = ref(false)
-
-// Fungsi untuk mengubah state saat user scroll
 const handleScroll = () => {
-  if (window.scrollY > 50) {
-    isScrolled.value = true
-  } else {
-    isScrolled.value = false
-  }
+  isScrolled.value = window.scrollY > 50
 }
 
-// Tambahkan & hapus event listener saat komponen dimuat & dihancurkan
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
 })
@@ -22,6 +15,23 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
 })
+
+// --- LOGIKA UNTUK MENUTUP MENU MOBILE SETELAH NAVIGASI ---
+const route = useRoute()
+const navbarCollapseRef = ref(null)
+
+watch(
+  () => route.path,
+  () => {
+    const isMenuOpen = navbarCollapseRef.value?.classList.contains('show')
+    if (isMenuOpen) {
+      const toggler = document.querySelector('.navbar-toggler')
+      if (toggler) {
+        toggler.click()
+      }
+    }
+  },
+)
 </script>
 
 <template>
@@ -42,8 +52,9 @@ onUnmounted(() => {
         </svg>
         <span>AdamMovie</span>
       </RouterLink>
+
       <button
-        class="navbar-toggler"
+        class="navbar-toggler custom-toggler"
         type="button"
         data-bs-toggle="collapse"
         data-bs-target="#navbarContent"
@@ -51,10 +62,12 @@ onUnmounted(() => {
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <span class="navbar-toggler-icon"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarContent">
+      <div class="collapse navbar-collapse" id="navbarContent" ref="navbarCollapseRef">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <RouterLink class="nav-link" to="/">Home</RouterLink>
@@ -70,6 +83,7 @@ onUnmounted(() => {
     </div>
   </nav>
 </template>
+
 <style scoped>
 /* State awal navbar: transparan */
 .navbar {
@@ -100,5 +114,63 @@ onUnmounted(() => {
   background-color: rgba(20, 20, 20, 0.8); /* Warna semi-transparan */
   backdrop-filter: blur(10px); /* Efek glassmorphism */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* --- STYLE UNTUK TOGGLE ANIMASI YANG KEREN --- */
+.custom-toggler {
+  border: none;
+  padding: 0;
+  width: 30px;
+  height: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  background: transparent;
+}
+
+.custom-toggler:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.custom-toggler .bar {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  border-radius: 3px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Animasi saat tombol diklik (menu terbuka) */
+.custom-toggler[aria-expanded='true'] .bar:nth-child(1) {
+  transform: translateY(9.5px) rotate(45deg);
+}
+
+.custom-toggler[aria-expanded='true'] .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.custom-toggler[aria-expanded='true'] .bar:nth-child(3) {
+  transform: translateY(-9.5px) rotate(-45deg);
+}
+
+/* --- CSS TAMBAHAN UNTUK MEMAKSA TOGGLE HILANG DI DESKTOP --- */
+@media (min-width: 992px) {
+  .navbar-toggler {
+    display: none;
+  }
+}
+/* --- STYLE TAMBAHAN UNTUK MENU DROPDOWN BLUR DI MOBILE --- */
+@media (max-width: 991.98px) {
+  .navbar-collapse.show {
+    background-color: rgba(20, 20, 20, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
 }
 </style>
