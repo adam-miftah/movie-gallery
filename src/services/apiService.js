@@ -2,7 +2,7 @@
 import axios from 'axios'
 
 // GANTI DENGAN API KEY ANDA SENDIRI DARI TMDB
-const API_KEY = 'MASUKKAN_API_KEY_ANDA_DISINI'
+const API_KEY = 'b21c54f801f401d28b568feaaf240a29'
 const BASE_URL = 'https://api.themoviedb.org/3'
 
 const apiClient = axios.create({
