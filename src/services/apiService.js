@@ -14,4 +14,7 @@ const apiClient = axios.create({
 
 export const fetchPopularMovies = () => apiClient.get('/movie/popular')
 export const searchMovies = (query) => apiClient.get('/search/movie', { params: { query } })
-export const fetchMovieById = (id) => apiClient.get(`/movie/${id}`)
+export const fetchMovieById = (id) =>
+  apiClient.get(`/movie/${id}`, {
+    params: { append_to_response: 'videos' },
+  })
