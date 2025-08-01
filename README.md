@@ -24,8 +24,7 @@ Di tengah lautan konten digital, menemukan tontonan berikutnya seharusnya menjad
 * 🌐 SEO Friendly dengan meta tag yang dioptimalkan untuk mesin pencari dan media sosial.
 
 ---
-🛠️ Stack Teknologi
-
+## 🛠️ Stack Teknologi
 * Aplikasi ini dibangun dengan teknologi modern:
 * Frontend Framework: Vue.js 3 (Composition API)
 * Build Tool: Vite
@@ -36,7 +35,7 @@ Di tengah lautan konten digital, menemukan tontonan berikutnya seharusnya menjad
 * Deployment: Vercel
 ---
 
-### 🚀 Memulai (Getting Started)
+## 🚀 Memulai (Getting Started)
 Ingin mencoba atau berkontribusi pada proyek ini? Ikuti langkah-langkah berikut:
 ```bash
 # 1. Prasyarat
