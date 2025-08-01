@@ -1,71 +1,127 @@
-AdamMovie 🎬
-AdamMovie adalah sebuah galeri film dan acara TV modern yang dibangun dengan Vue.js 3 dan Vite. Proyek ini menampilkan antarmuka yang bersih, responsif, dan kaya akan fitur, dirancang untuk memberikan pengalaman menjelajah sinema yang menyenangkan dan intuitif.
+🎬 AdamMovie 🍿
+Selamat datang di AdamMovie! Gerbang Anda menuju dunia sinema yang tak terbatas. Proyek ini adalah sebuah galeri film dan acara TV modern yang dirancang dengan antarmuka yang bersih, responsif, dan imersif untuk memberikan pengalaman menjelajah terbaik.
 
-✨ Fitur Utama
-Desain Responsif: Tampilan yang optimal di semua perangkat, dari mobile hingga desktop.
+---
+✨ Mengapa AdamMovie?
+Di tengah lautan konten digital, menemukan tontonan berikutnya seharusnya menjadi pengalaman yang menyenangkan. AdamMovie menawarkan:
 
-Hero Section Dinamis: Menampilkan film paling populer sebagai sorotan utama di halaman depan.
+🧑‍💻 Antarmuka Modern & Imersif: Pengalaman pengguna yang sinematik, fokus pada visual, dan mudah dinavigasi.
 
-Navigasi Halaman: Halaman terpisah untuk Film Populer, Top Rated, dan Acara TV Populer.
+⚙️ Fitur Lengkap: Dari film populer hingga detail acara TV, semua informasi penting ada di ujung jari Anda.
 
-Halaman Detail Sinematik: Latar belakang dinamis yang imersif dan informasi lengkap untuk setiap film atau acara TV.
+⚡ Performa Cepat: Dibangun dengan Vite dan Vue 3, memastikan waktu muat yang sangat cepat dan interaksi yang mulus.
 
-Tombol Tonton Trailer: Link langsung ke trailer di YouTube jika tersedia.
+📱 Desain Responsif Penuh: Tampilan sempurna di semua perangkat, baik itu desktop, tablet, maupun mobile.
 
-Pencarian Real-time: Fitur pencarian untuk menemukan film dengan cepat.
+💡 Fleksibel & Terbuka: Kode yang bersih dan terstruktur, siap untuk dikembangkan lebih lanjut.
 
-Pagination Cerdas: Navigasi halaman yang modern dan tidak memuat semua nomor halaman sekaligus.
+---
+🎯 Fitur Unggulan
+🖼️ Hero Section Dinamis di halaman utama yang menampilkan film paling populer.
 
-UI Modern: Dilengkapi dengan efek glassmorphism, animasi hover yang halus, dan transisi antar halaman.
+📇 Desain Kartu Modern dengan efek hover overlay dan rating yang elegan.
 
-🛠️ Teknologi yang Digunakan
-Framework: Vue.js 3 (Composition API dengan <script setup>)
+📄 Halaman Detail Sinematik dengan latar belakang backdrop yang imersif.
 
-Build Tool: Vite
+🎞️ Tombol Tonton Trailer yang mengarahkan langsung ke YouTube.
 
-Styling: Bootstrap 5 & Bootstrap Icons
+🔍 Pencarian Film secara real-time.
 
-Routing: Vue Router
+🔢 Pagination Cerdas & Keren untuk menavigasi ribuan judul dengan mudah.
 
-State Management: Pinia
+📱 Navbar Responsif dengan efek glassmorphism dan toggle animasi yang keren.
 
-HTTP Client: Axios
+🌐 SEO Friendly dengan meta tag yang dioptimalkan untuk mesin pencari dan media sosial.
 
-Deployment: Vercel
+---
+🛠️ Stack Teknologi
+Aplikasi ini dibangun dengan teknologi modern:
 
-🚀 Instalasi & Menjalankan Proyek
-Untuk menjalankan proyek ini di komputer lokal Anda, ikuti langkah-langkah berikut:
+- Frontend Framework: Vue.js 3 (Composition API)
 
-1. Clone Repository
-git clone https://github.com/adam-miftah/movie-gallery.git
-cd movie-gallery
+- Build Tool: Vite
 
-2. Install Dependencies
+- Styling: Bootstrap 5 & Bootstrap Icons
+
+- Routing: Vue Router
+
+- State Management: Pinia
+
+- HTTP Client: Axios
+
+- Deployment: Vercel
+
+---
+```
+🚀 Memulai (Getting Started)
+Ingin mencoba atau berkontribusi pada proyek ini? Ikuti langkah-langkah berikut:
+
+1. Prasyarat
+Pastikan Anda memiliki Node.js (versi 16+ direkomendasikan).
+
+npm atau yarn terinstal.
+
+2. Instalasi
+# 1. Clone repository
+# Ganti 'nama-anda/adam-movie' dengan URL repository GitHub Anda
+git clone https://github.com/nama-anda/adam-movie.git
+cd adam-movie
+
+# 2. Install semua dependencies
 npm install
 
-3. Konfigurasi API Key 🔑
-Proyek ini membutuhkan API key dari The Movie Database (TMDb).
+# 3. Konfigurasi API Key
+#    Proyek ini membutuhkan API key dari The Movie Database (TMDb).
+#    Dapatkan kunci Anda di: https://www.themoviedb.org/settings/api
 
-Buat file baru di root proyek dengan nama .env.
+# 4. Buat file environment baru
+cp .env.example .env
 
-Isi file tersebut dengan API Key Anda dari TMDb.
+# 5. Buka file .env dan masukkan API Key Anda
+#    VITE_TMDB_API_KEY=MASUKKAN_KUNCI_API_ANDA_DI_SINI
 
-VITE_TMDB_API_KEY=MASUKKAN_API_KEY_ANDA_DISINI
+# 6. Ganti API Key di dalam file-file komponen
+#    Cari 'MASUKKAN_API_KEY_ANDA_DISINI' di dalam proyek
+#    dan ganti dengan import.meta.env.VITE_TMDB_API_KEY
+#    Contoh di MoviesView.vue:
+#    const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
 
-Penting: Ganti MASUKKAN_API_KEY_ANDA_DISINI di file-file view (MoviesView.vue, TvDetailView.vue, dll) dengan import.meta.env.VITE_TMDB_API_KEY.
-
-Contoh di MoviesView.vue:
-
-// Ganti ini:
-const API_KEY = 'MASUKKAN_API_KEY_ANDA_DISINI';
-
-// Menjadi ini:
-const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
-
-4. Jalankan Server Development
+# 7. Jalankan server pengembangan
 npm run dev
 
-Aplikasi akan berjalan di http://localhost:5173.
+Aplikasi Anda sekarang akan berjalan di http://localhost:5173.
+```
 
-📄 API
-Proyek ini sepenuhnya menggunakan data dari The Movie Database (TMDb) API. Terima kasih kepada TMDb karena telah menyediakan API yang luar biasa untuk para developer.
+---
+🗺️ Roadmap Proyek (Rencana ke Depan)
+Fitur "Watchlist" untuk menyimpan film & acara TV.
+
+Sistem Autentikasi Pengguna (Login/Register).
+
+Fitur Ulasan & Rating dari pengguna.
+
+Filter Berdasarkan Genre di halaman Movies & TV Shows.
+
+Mode Terang/Gelap yang bisa diganti oleh pengguna.
+
+---
+🤝 Ingin Berkontribusi?
+Kontribusi Anda sangat kami harapkan! Baik itu berupa ide, laporan bug, atau pull request.
+
+Fork repository ini.
+
+Buat Branch baru (git checkout -b fitur/NamaFiturAnda).
+
+Commit perubahan Anda (git commit -m 'Menambahkan fitur keren').
+
+Push ke branch Anda (git push origin fitur/NamaFiturAnda).
+
+Buat Pull Request baru.
+
+---
+💌 Kontak & Dukungan
+Punya pertanyaan, saran, atau ingin berdiskusi?
+
+Email: [adammiftah196@gmail.com]
+
+GitHub Issues: Buka Isu Baru
