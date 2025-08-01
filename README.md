@@ -57,15 +57,15 @@ Di tengah lautan konten digital, menemukan tontonan berikutnya seharusnya menjad
 ---
 ```
 🚀 Memulai (Getting Started)
+
 Ingin mencoba atau berkontribusi pada proyek ini? Ikuti langkah-langkah berikut:
 
 1. Prasyarat
-Pastikan Anda memiliki Node.js (versi 16+ direkomendasikan).
-
-npm atau yarn terinstal.
+   Pastikan Anda memiliki Node.js (versi 22+ direkomendasikan).
+   npm atau yarn terinstal.
 
 2. Instalasi
-1. Clone repository
+   - Clone repository
    Ganti 'nama-anda/adam-movie' dengan URL repository GitHub Anda
    git clone https://github.com/nama-anda/movie-gallery.git
    cd movie-gallery
