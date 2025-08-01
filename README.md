@@ -38,21 +38,21 @@ Di tengah lautan konten digital, menemukan tontonan berikutnya seharusnya menjad
 ---
 🛠️ Stack Teknologi
 
-Aplikasi ini dibangun dengan teknologi modern:
+- Aplikasi ini dibangun dengan teknologi modern:
 
-Frontend Framework: Vue.js 3 (Composition API)
+- Frontend Framework: Vue.js 3 (Composition API)
 
-Build Tool: Vite
+- Build Tool: Vite
 
-Styling: Bootstrap 5 & Bootstrap Icons
+- Styling: Bootstrap 5 & Bootstrap Icons
 
-Routing: Vue Router
+- Routing: Vue Router
 
-State Management: Pinia
+- State Management: Pinia
 
-HTTP Client: Axios
+- HTTP Client: Axios
 
-Deployment: Vercel
+- Deployment: Vercel
 
 ---
 ```
@@ -81,7 +81,7 @@ npm atau yarn terinstal.
    cp .env.example .env
 
 5. Buka file .env dan masukkan API Key Anda
-     VITE_TMDB_API_KEY=MASUKKAN_KUNCI_API_ANDA_DI_SINI
+   VITE_TMDB_API_KEY=MASUKKAN_KUNCI_API_ANDA_DI_SINI
 
 6. Ganti API Key di dalam file-file komponen
    Cari 'MASUKKAN_API_KEY_ANDA_DISINI' di dalam proyek dan ganti dengan import.meta.env.VITE_TMDB_API_KEY
@@ -89,7 +89,7 @@ npm atau yarn terinstal.
    const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
 
 7. Jalankan server pengembangan
-npm run dev
+   npm run dev
 
 Aplikasi Anda sekarang akan berjalan di http://localhost:5173.
 ```
